@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LabLume – Health Risk Prediction</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="card">
+    <h2>🧪 LabLume Health Risk Predictor</h2>
+
+    <form method="POST" action="/predict">
+        <input name="age" placeholder="Age" required>
+        <input name="sugar" placeholder="Sugar" required>
+        <input name="bp" placeholder="Blood Pressure" required>
+        <input name="cholesterol" placeholder="Cholesterol" required>
+        <input name="hemoglobin" placeholder="Hemoglobin" required>
+
+        <select name="gender">
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+        </select>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+        <div class="result">{{ result }}</div>
+    {% endif %}
+</div>
+
+</body>
+</html>
